@@ -1,0 +1,95 @@
+/* Gallery Section */
+
+.gallery-page {
+    background: linear-gradient(rgba(15, 47, 69, 0.4), rgba(15, 47, 69, 0.4)), url(../images/sub-hero-gallery.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gallery-container {
+    padding: 4rem 8rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.gallery img,
+.wide {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.normal,
+.wide {
+    height: 250px;
+}
+
+.tall {
+    grid-row: span 2;
+    height: 510px;
+
+}
+
+.wide {
+    grid-column: span 2;
+}
+
+/* Media Query for Tablet */
+
+@media (max-width: 1024px), print {
+
+    .gallery-page {
+        padding: 0 5rem;
+    }
+    .gallery-container {
+        padding: 4rem;
+    }
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tablet-normal {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .tablet-tall {
+        grid-row: span 2;
+        height: 510px;
+    }
+
+}
+
+/* Media Query for Phone */
+
+@media (max-width: 600px), print {
+
+    .gallery-page h1 {
+        font-size: 6rem;
+    }
+
+    .gallery-page span, .tall {
+        display: none;
+    }
+
+    .gallery-container {
+        padding: 3rem 2rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 200px;
+    }
+    
+
+}
